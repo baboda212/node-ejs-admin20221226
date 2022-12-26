@@ -12,6 +12,10 @@ const jsonData = JSON.parse(readfile); // 코드변환
 //console.log(jsonData); 확인용
 products = [...jsonData];
 console.log(jsonData);
+const admin = {
+    id: 'admin',
+    pwd: '1234'
+};
 
 
 //ejs 를  view엔진으로 설정하기
@@ -22,7 +26,7 @@ app.use(express.static("public"));
 
 //home 라우팅
 app.get('/', function(요청, 응답){
-    응답.render('pages/index.ejs')
+    응답.render('pages/index.ejs', {admin});
 })
 
 //about 라우팅
@@ -38,8 +42,15 @@ app.get('/product', function(req, res){
 //admin 라우팅
 app.get('/admin', function(req, res){
     res.render('pages/admin.ejs',{
-        title:"관리자 페이지"
+        title:"관리자 페이지",
+        admin
     });
+})
+//download
+app.get('/download',function(req, res){
+    //res.send('download');
+    const file = 'db.json';
+    res.download(file);
 })
 
 
