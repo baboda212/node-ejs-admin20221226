@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- 템플릿 엔지(개발용HTML이라고 생각하면 됨.) -->
+    <!-- nav -->
+    <%- include('../components/nav.ejs') %> 
+    <h1>products</h1>
+    <!-- 0번상품 -->
+    <p>
+        <%= products[0].title %> 
+        <span><%= products[0].price  %> 원</span>
+    </p>
+    <!-- 1번상품 -->
+    <p>
+        <%= products[1].title %> 
+        <span><%= products[1].price  %> 원</span>
+    </p>
+    <!-- 2번상품 -->
+    <p>
+        <%= products[2].title %> 
+        <span><%= products[2].price  %> 원</span>
+    </p>
+
+
+    <script>
+
+    </script>
+</body>
+</html>
