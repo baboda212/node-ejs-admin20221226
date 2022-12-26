@@ -31,12 +31,12 @@ app.get('/', function(요청, 응답){
 
 //about 라우팅
 app.get('/about', function(req, res){
-    res.render('pages/about.ejs');
+    res.render('pages/about.ejs',{admin});
 })
 
 //product라우팅
 app.get('/product', function(req, res){
-    res.render('pages/product.ejs', {products});
+    res.render('pages/product.ejs', {products, admin});
 })
 
 //admin 라우팅
